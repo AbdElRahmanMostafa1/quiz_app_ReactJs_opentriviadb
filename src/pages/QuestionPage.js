@@ -65,6 +65,7 @@ const QuestionPage = () => {
 
   return (
     <div className="text-center">
+      <h2> Question {questionIndex + 1} </h2>
       <h3 className="my-5">
         {decode(response?.results[questionIndex].question)}
       </h3>
