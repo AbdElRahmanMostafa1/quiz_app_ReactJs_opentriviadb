@@ -2,10 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import LoadingSpinner from "../components/LoadingSpinner";
 import useFetch from "../hooks/useFetch";
-import badLogo from "../assets/undraw_reading_book_re_kqpk (1).svg";
-import fairLogo from "../assets/undraw_reading_list_re_bk72 (1).svg";
-import goodLogo from "../assets/undraw_reading_time_re_phf7.svg";
-import excellentLogo from "../assets/undraw_good_team_re_j1kc (1).svg";
+import badLogo from "../assets/images/undraw_reading_book_re_kqpk (1).svg";
+import fairLogo from "../assets/images/undraw_reading_list_re_bk72 (1).svg";
+import goodLogo from "../assets/images/undraw_reading_time_re_phf7.svg";
+import excellentLogo from "../assets/images/undraw_good_team_re_j1kc (1).svg";
 import Card from "../components/Card";
 import Alert from "../components/Alert";
 

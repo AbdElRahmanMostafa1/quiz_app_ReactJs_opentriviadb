@@ -7,6 +7,8 @@ import { decode } from "html-entities";
 import getRandomInt from "../utils/getRandomInt";
 import { changeScoreHandler } from "../store/quizSlice";
 import Alert from "../components/Alert";
+import correctAnswerSound from "../assets/audio/correct-answer.mp3";
+import wrongAnswerSound from "../assets/audio/wrong-answer.mp3";
 
 const QuestionPage = () => {
   const navigate = useNavigate();
@@ -17,6 +19,8 @@ const QuestionPage = () => {
   let [questionIndex, setQuestionIndex] = useState(0);
   const [options, setOptions] = useState([]);
   let [score, setScore] = useState(0);
+  const correctAnswerAudio = new Audio(correctAnswerSound);
+  const wrongAnswerAudio = new Audio(wrongAnswerSound);
 
   const url = `https://opentdb.com/api.php?amount=${amountOfQuestions}&category=${category}&difficulty=${level}&type=${questionType}
   `;
@@ -48,6 +52,9 @@ const QuestionPage = () => {
       response?.results[questionIndex - 1].correct_answer
     ) {
       setScore((score += 1));
+      correctAnswerAudio.play();
+    } else {
+      wrongAnswerAudio.play();
     }
   };
 
